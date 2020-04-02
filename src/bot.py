@@ -16,9 +16,9 @@ def parseConfig():
         config = open('../config.json', 'r')
         configDict = json.load(config)
         config.close()
-        token = configDict["token"]
-        prefix = configDict["prefix"]
-        colour = configDict["colour"]
+        token = configDict["Token"]
+        prefix = configDict["Prefix"]
+        colour = configDict["Colour"]
         return token, prefix, colour
     except KeyError:
         raise BotError("Bad config.json file")
