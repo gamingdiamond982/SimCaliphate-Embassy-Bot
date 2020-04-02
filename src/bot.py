@@ -16,9 +16,10 @@ def parseConfig():
         config = open('../config.json', 'r')
         configDict = json.load(config)
         config.close()
-        token = configDict["Token"]
-        prefix = configDict["Prefix"]
-        return token, prefix
+        token = configDict["token"]
+        prefix = configDict["prefix"]
+        colour = configDict["colour"]
+        return token, prefix, colour
     except KeyError:
         raise BotError("Bad config.json file")
 
@@ -43,7 +44,7 @@ async def on_message(message):
         response = commands.parseMessage(command_content, message.author)
 
         chunks = utils.split_into_chunks(response.encode('utf-8'), 1024)
-        embed = discord.Embed(color=0xb00c0c)
+        embed = discord.Embed(color=colour)
         title = command_content.split()[0] if len(
             command_content.split()) > 0 else 'Empty Message'
         for i, chunk in enumerate(chunks):
@@ -56,5 +57,5 @@ async def on_message(message):
 
 
 if __name__ == '__main__':
-    token, prefix = parseConfig()
+    token, prefix, colour = parseConfig()
     client.run(token)
