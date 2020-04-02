@@ -1,7 +1,7 @@
 from bot import client
 import asyncio
 
-async def assertAuthLevel(author):
+
 	
 	
 
