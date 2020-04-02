@@ -19,10 +19,6 @@ def parse_reference(content, author):
         return command_name + " " + command_desc
 
 
-def reference(command, author):
-    # TODO: implement reference command
-    return
-
 
 Commands = {
     'reference': (
