@@ -51,7 +51,7 @@ async def on_message(message):
                 embed.add_field(name=title, value=chunk.decode(
                     'utf-8'), inline=False)
             embed.set_thumbnail(url=message.author.avatar_url)
-            embed.set_footer(text="Long live the Dictator")
+            embed.set_footer(text="Long live the Sultan")
             await message.channel.send(embed=embed)
 
 
