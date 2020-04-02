@@ -32,7 +32,7 @@ async def on_ready():
 async def on_message(message):
     if message.author == client.user:
         return
-    
+
     if message.content.startswith(prefix):
 
         # get the message content
@@ -47,8 +47,8 @@ async def on_message(message):
         title = command_content.split()[0] if len(
             command_content.split()) > 0 else 'Empty Message'
         for i, chunk in enumerate(chunks):
-             title = "(cont'd)" if i > 0 else title
-             embed.add_field(name=title, value=chunk.decode(
+            title = "(cont'd)" if i > 0 else title
+            embed.add_field(name=title, value=chunk.decode(
                 'utf-8'), inline=False)
             embed.set_thumbnail(url=message.author.avatar_url)
             embed.set_footer(text="Long live the Sultan")

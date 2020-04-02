@@ -7,7 +7,7 @@ def parseMessage(message, author):
     # if the first word of the message is in Commands:
     if content[0] in Commands:
         # Gets the function for the command
-        return Commands[content[0]][len(Commands[content])-1](message, author)
+        return Commands[content[0]][2](message, author)
     else:
         return 'Invalid Command'
 
