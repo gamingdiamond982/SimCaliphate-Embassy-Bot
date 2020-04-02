@@ -11,7 +11,7 @@ class BotError(Exception):
 
 
 def parseConfig():
-    """reads the confic.json file"""
+    """reads the config.json file"""
     try:
         config = open('config.json', 'r')
         configDict = json.load(config)
@@ -34,7 +34,11 @@ async def on_message(message):
         return
 
         if message.content.startswith(prefix):
+
+            # get the message content
             content = message.content
+
+            # get rid of the prefix
             command_content = content[len(prefix):].lstrip()
             response = commands.parseMessage(command_content, message.author)
 

@@ -13,7 +13,10 @@ def parseMessage(message, author):
 
 
 def parse_reference(content, author):
-    return
+    for cmd in Commands:
+        command_name = Commands[cmd][0]
+        command_desc = Commands[cmd][1]
+        print(command_name + " : " + command_desc)
 
 
 def reference(command, author):
