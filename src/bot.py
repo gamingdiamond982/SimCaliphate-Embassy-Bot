@@ -13,11 +13,11 @@ class BotError(Exception):
 def parseConfig():
     """reads the config.json file"""
     try:
-        config = open('config.json', 'r')
+        config = open('../config.json', 'r')
         configDict = json.load(config)
         config.close()
-        token = configDict["token"]
-        prefix = configDict["prefix"]
+        token = configDict["Token"]
+        prefix = configDict["Prefix"]
         return token, prefix
     except KeyError:
         raise BotError("Bad config.json file")
